@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
