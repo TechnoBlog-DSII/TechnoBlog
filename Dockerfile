@@ -8,7 +8,7 @@ ENV APP_ENV=production
 ENV APP_DEBUG=false
 
 FROM node:20 as node
-COPY . /app/
+COPY ./ ./
 RUN npm install
 COPY . .
 # RUN npm run dev
