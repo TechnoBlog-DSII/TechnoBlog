@@ -30,7 +30,7 @@ body{
 .sm\:pt-0 {
     padding-top: 0px;
     background-color:#27292a;
-    background-image: url('build/assets/images/wallpaper_login.jpg');
+    background-image: url('images/wallpaper_login.jpg');
     width: 100%;
     height: auto;
     background-size: cover;
