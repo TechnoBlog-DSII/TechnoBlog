@@ -7,9 +7,9 @@ FROM php:8.1-apache-buster as production
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 
-FROM node:20 as node
-COPY ./ ./
-RUN npm install
+FROM node:18-alpine
+WORKDIR /app
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install 
 COPY . .
-# RUN npm run dev
-CMD ["npm", "test"]
+CMD ["node", "test"]
