@@ -14,9 +14,33 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+    <body >
+        <div class="font-sans text-gray-200 antialiased">
             {{ $slot }}
         </div>
+
+
     </body>
+        <style>
+body{
+    background-color: blue;
+    
+}
+
+.sm\:pt-0 {
+    padding-top: 0px;
+    background-color:#27292a;
+    background-image: url('build/assets/images/wallpaper_login.jpg');
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+}
+.w-16 {
+    
+}
+
+
+        </style>
+
 </html>
