@@ -7,7 +7,7 @@ FROM php:8.1-apache-buster as production
 ENV APP_ENV=production
 ENV APP_DEBUG=false
 
-FROM node:16.13.0 as node
+FROM node:20 as node
 COPY . /app/
 RUN npm install
 COPY . .
