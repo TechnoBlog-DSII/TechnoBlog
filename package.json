@@ -1,7 +1,8 @@
 {
     "private": true,
+    "main": "register.js",
     "scripts": {
-        "test": "jest",
+        "test": "",
         "dev": "vite",
         "build": "vite build"
     },
