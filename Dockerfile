@@ -9,7 +9,7 @@ ENV APP_DEBUG=false
 
 FROM node:20 as node
 COPY . /app/
-RUN npm install
+# RUN npm install
 COPY . .
 RUN npm run dev
 CMD ["npm", "run", "dev"]
