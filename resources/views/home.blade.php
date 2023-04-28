@@ -11,16 +11,16 @@
     <title>Cyborg - Awesome HTML5 Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="build/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{ asset('build/assets/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/css/templatemo-cyborg-gaming.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/css/owl.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/templatemo-cyborg-gaming.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/owl.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!--
 
@@ -53,7 +53,7 @@ https://templatemo.com/tm-579-cyborg-gaming
               <nav class="main-nav">
                   <!-- ***** Logo Start ***** -->
                   <a href="index.html" class="logo">
-                      <img src="build/assets/images/Logo Technoblog.png" alt="">
+                      <img src="images/Logo Technoblog.png" alt="">
                   </a>
                   <!-- ***** Logo End ***** -->
                   <!-- ***** Search End ***** -->
@@ -119,7 +119,7 @@ https://templatemo.com/tm-579-cyborg-gaming
               <div class="row">
                 <div class="col-lg-3 col-sm-6">
                   <div class="item">
-                    <img src="build/assets/images/popular-01.jpg" alt="">
+                    <img src="images/popular-01.jpg" alt="">
                     <h4>Fortnite<br><span>Sandbox</span></h4>
                     <ul>
                       <li><i class="fa fa-star"></i> 4.8</li>
@@ -129,7 +129,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 </div>
                 <div class="col-lg-3 col-sm-6">
                   <div class="item">
-                    <img src="build/assets/images/popular-02.jpg" alt="">
+                    <img src="images/popular-02.jpg" alt="">
                     <h4>PubG<br><span>Battle S</span></h4>
                     <ul>
                       <li><i class="fa fa-star"></i> 4.8</li>
@@ -139,7 +139,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 </div>
                 <div class="col-lg-3 col-sm-6">
                   <div class="item">
-                    <img src="build/assets/images/popular-03.jpg" alt="">
+                    <img src="images/popular-03.jpg" alt="">
                     <h4>Dota2<br><span>Steam-X</span></h4>
                     <ul>
                       <li><i class="fa fa-star"></i> 4.8</li>
@@ -149,7 +149,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 </div>
                 <div class="col-lg-3 col-sm-6">
                   <div class="item">
-                    <img src="build/assets/images/popular-04.jpg" alt="">
+                    <img src="images/popular-04.jpg" alt="">
                     <h4>CS-GO<br><span>Legendary</span></h4>
                     <ul>
                       <li><i class="fa fa-star"></i> 4.8</li>
@@ -162,7 +162,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <div class="row">
                       <div class="col-lg-6 col-sm-6">
                         <div class="item inner-item">
-                          <img src="build/assets/images/popular-05.jpg" alt="">
+                          <img src="images/popular-05.jpg" alt="">
                           <h4>Mini Craft<br><span>Legendary</span></h4>
                           <ul>
                             <li><i class="fa fa-star"></i> 4.8</li>
@@ -172,7 +172,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                       </div>
                       <div class="col-lg-6 col-sm-6">
                         <div class="item">
-                          <img src="build/assets/images/popular-06.jpg" alt="">
+                          <img src="images/popular-06.jpg" alt="">
                           <h4>Eagles Fly<br><span>Matrix Games</span></h4>
                           <ul>
                             <li><i class="fa fa-star"></i> 4.8</li>
@@ -185,7 +185,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 </div>
                 <div class="col-lg-3 col-sm-6">
                   <div class="item">
-                    <img src="build/assets/images/popular-07.jpg" alt="">
+                    <img src="images/popular-07.jpg" alt="">
                     <h4>Warface<br><span>Max 3D</span></h4>
                     <ul>
                       <li><i class="fa fa-star"></i> 4.8</li>
@@ -195,7 +195,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                 </div>
                 <div class="col-lg-3 col-sm-6">
                   <div class="item">
-                    <img src="build/assets/images/popular-08.jpg" alt="">
+                    <img src="images/popular-08.jpg" alt="">
                     <h4>Warcraft<br><span>Legend</span></h4>
                     <ul>
                       <li><i class="fa fa-star"></i> 4.8</li>
@@ -222,7 +222,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             </div>
             <div class="item">
               <ul>
-                <li><img src="build/assets/images/game-01.jpg" alt="" class="templatemo-item"></li>
+                <li><img src="images/game-01.jpg" alt="" class="templatemo-item"></li>
                 <li><h4>Dota 2</h4><span>Sandbox</span></li>
                 <li><h4>Date Added</h4><span>24/08/2036</span></li>
                 <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
@@ -232,7 +232,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             </div>
             <div class="item">
               <ul>
-                <li><img src="build/assets/images/game-02.jpg" alt="" class="templatemo-item"></li>
+                <li><img src="images/game-02.jpg" alt="" class="templatemo-item"></li>
                 <li><h4>Fortnite</h4><span>Sandbox</span></li>
                 <li><h4>Date Added</h4><span>22/06/2036</span></li>
                 <li><h4>Hours Played</h4><span>740 H 52 Mins</span></li>
@@ -242,7 +242,7 @@ https://templatemo.com/tm-579-cyborg-gaming
             </div>
             <div class="item last-item">
               <ul>
-                <li><img src="build/assets/images/game-03.jpg" alt="" class="templatemo-item"></li>
+                <li><img src="images/game-03.jpg" alt="" class="templatemo-item"></li>
                 <li><h4>CS-GO</h4><span>Sandbox</span></li>
                 <li><h4>Date Added</h4><span>21/04/2036</span></li>
                 <li><h4>Hours Played</h4><span>892 H 14 Mins</span></li>
@@ -278,14 +278,14 @@ https://templatemo.com/tm-579-cyborg-gaming
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="{{ asset('build/vendor/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('build/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
-  <script src="{{ asset('build/assets/js/isotope.min.js') }}"></script>
-  <script src="{{ asset('build/assets/js/owl-carousel.js') }}"></script>
-  <script src="{{ asset('build/assets/js/tabs.js') }}"></script>
-  <script src="{{ asset('build/assets/js/popup.js') }}"></script>
-  <script src="{{ asset('build/assets/js/custom.js') }}"></script>
+  <script src="{{ asset('js/isotope.min.js') }}"></script>
+  <script src="{{ asset('js/owl-carousel.js') }}"></script>
+  <script src="{{ asset('js/tabs.js') }}"></script>
+  <script src="{{ asset('js/popup.js') }}"></script>
+  <script src="{{ asset('js/custom.js') }}"></script>
 
 
   </body>
