@@ -36,11 +36,14 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
 
+    - name: Linkeamos Storage
+      run: php artisan storage:link
+
     - name: Corremos tests de Jest
       run: npm test
 
     - name: Corremos tests de Unit
-      run: vendor/bin/phpunit
+      run: tests/Unit/ExampleTest.php
     
     - name: Construimos imagen docker
       run: docker build -t technoblog .
