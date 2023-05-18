@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use Dotenv\Validator;
 use PHPUnit\Framework\TestCase;
 use App\Models\User;
+use App\Models\Usuario;
 
 class RegistroTest extends TestCase
 {
@@ -13,24 +14,24 @@ class RegistroTest extends TestCase
      */
     public function test_comprobar_nombre()
     {
-        $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
-        $nombre = 'Sergio Escudero';
+        // $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $usuarioprueba = new Usuario('Sergio Escudero', 'sergioset7@gmail.com', 20, 'Ornitorrinco2831!');
 
-        $this->assertNotNull($nombre, 'El nombre no puede estar vacio');
+        $this->assertNotNull($usuarioprueba->name, 'El nombre no puede estar vacio');
     }
     public function test_comprobar_email()
     {
-        $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
-        $correo = 'sergioset7@gmail.com';
+        // $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $usuarioprueba = new Usuario('Sergio Escudero', 'sergioset7@gmail.com', 20, 'Ornitorrinco2831!');
 
-        $this->assertContains('@', str_split($correo), 'Se necesita un @ en el email');
+        $this->assertContains('@', str_split($usuarioprueba->email), 'Se necesita un @ en el email');
     }
 
     public function test_comprobar_password()
     {
-        $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
-        $contrasenia = 'Ornitorrinco2831!';
+        // $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $usuarioprueba = new Usuario('Sergio Escudero', 'sergioset7@gmail.com', 20, 'Ornitorrinco2831!');
 
-        $this->assertNotNull($contrasenia, 'La contraseña no puede estar vacia');
+        $this->assertNotNull($usuarioprueba->password, 'La contraseña no puede estar vacia');
     }
 }

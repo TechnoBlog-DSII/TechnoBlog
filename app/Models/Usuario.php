@@ -6,43 +6,38 @@ use InvalidArgumentException;
 
 class Usuario
 {
-    public int $age;
-    public array $favorite_movies = [];
-    public string $name;
 
+    public string $name;
+    public string $email;
+    public int $age;
+    public string $password;
+    
     /**
-     * @param int $age
      * @param string $name
+     * @param int $age
+     * @param string $email
+     * @param string $password
      */
-    public function __construct(int $age, string $name)
+     
+    public function __construct(string $name, string $email, int $age, string $password)
     {
         $this->age = $age;
         $this->name = $name;
+        $this->email = $email;
+        $this->password = $password;
     }
 
-    public function tellName(): string
+    public function defaultName($nombre): bool
     {
-        return "My name is " . $this->name . ".";
+        $this->name = $nombre;
+        return True;
     }
 
-    public function tellAge(): int
+    public function minAge(): int
     {
+        $this->age = 18;
         return $this->age;
     }
 
-    public function addFavoriteMovie(string $movie): bool
-    {
-        $this->favorite_movies[] = $movie;
 
-        return true;
-    }
-
-    public function removeFavoriteMovie(string $movie): bool
-    {
-        if (!in_array($movie, $this->favorite_movies)) throw new InvalidArgumentException("Unknown movie: " . $movie);
-
-        unset($this->favorite_movies[array_search($movie, $this->favorite_movies)]);
-
-        return true;
-    }
 }
