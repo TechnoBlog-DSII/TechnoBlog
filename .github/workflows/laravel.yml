@@ -42,11 +42,8 @@ jobs:
     - name: Corremos tests de Jest
       run: npm test
 
-    - name: Crear base de datos de prueba
-      run: php artisan migrate --env=testing --force
-
     - name: corremos tests de phpunit
-      run: vendor/bin/phpunit
+      run: vendor/bin/phpunit --coverage-html coverage
 
     - name: Construimos imagen docker
       run: docker build -t technoblog .

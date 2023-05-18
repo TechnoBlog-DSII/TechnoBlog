@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use Dotenv\Validator;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
