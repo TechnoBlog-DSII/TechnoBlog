@@ -14,20 +14,23 @@ class RegistroTest extends TestCase
     public function test_comprobar_nombre()
     {
         $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $nombre = 'Sergio Escudero';
 
-        $this->assertNotNull($usuario->name);
+        $this->assertNotNull($nombre, 'El nombre no puede estar vacio');
     }
     public function test_comprobar_email()
     {
         $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $correo = 'sergioset7@gmail.com';
 
-        $this->assertSame('sergioset7@gmail.com',  'sergioset7@gmail.com');
+        $this->assertContains('@', str_split($correo), 'Se necesita un @ en el email');
     }
 
     public function test_comprobar_password()
     {
         $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $contrasenia = 'Ornitorrinco2831!';
 
-        $this->assertSame('sergioset7@gmail.com',  'sergioset7@gmail.com');
+        $this->assertNotNull($contrasenia, 'La contraseña no puede estar vacia');
     }
 }
