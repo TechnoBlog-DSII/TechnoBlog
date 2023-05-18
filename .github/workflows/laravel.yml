@@ -42,8 +42,8 @@ jobs:
     - name: Corremos tests de Jest
       run: npm test
 
-    - name: corremos tests de phpunit
-      run: vendor/bin/phpunit --coverage-html coverage
+    - name: Corremos tests de phpunit
+      run: vendor/bin/phpunit --coverage-text
 
     - name: Construimos imagen docker
       run: docker build -t technoblog .

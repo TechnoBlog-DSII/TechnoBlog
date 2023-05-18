@@ -16,7 +16,7 @@ class InicioSesionTest extends TestCase
     {
         $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
         $correo = 'sergioset7@gmail.com';
-        
+                
         $this->assertContains('@', str_split($correo), 'Se necesita un @ en el email');
     }
         
