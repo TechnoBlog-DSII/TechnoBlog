@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684481581211" clover="3.2.0">
+  <project timestamp="1684481581212" name="All files">
+    <metrics statements="16" coveredstatements="15" conditionals="17" coveredconditionals="16" methods="1" coveredmethods="1" elements="34" coveredelements="32" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
+    <file name="register.js" path="D:\Repositorios\TechnoBlog\tests\Jest\register.js">
+      <metrics statements="16" coveredstatements="15" conditionals="17" coveredconditionals="16" methods="1" coveredmethods="1"/>
+      <line num="2" count="10" type="cond" truecount="5" falsecount="0"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="6" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="9" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="13" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="17" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="21" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="25" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

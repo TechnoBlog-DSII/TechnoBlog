@@ -40,7 +40,7 @@ jobs:
       run: php artisan storage:link
 
     - name: Corremos tests de Jest
-      run: npm test
+      run: npm run test:coverage
 
     - name: Corremos tests de phpunit
       run: vendor/bin/phpunit --coverage-text
