@@ -2,9 +2,7 @@
 
 namespace Tests\Unit;
 
-use Dotenv\Validator;
 use PHPUnit\Framework\TestCase;
-use App\Models\User;
 use App\Models\Usuario;
 
 use Ramsey\Uuid\Generator\DefaultNameGenerator;

@@ -6,7 +6,6 @@ use InvalidArgumentException;
 
 class Usuario
 {
-
     public string $name;
     public string $email;
     public int $age;
