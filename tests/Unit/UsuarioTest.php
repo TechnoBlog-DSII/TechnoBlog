@@ -61,14 +61,14 @@ class UsuarioTest extends TestCase
 
         $this->assertSame($usuarioprueba->email, 'estado@gobierno.com');
     }
-    // public function test_actualizarPassword()
-    // {
-    //     // $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
-    //     $usuarioprueba = new Usuario('Sergio Escudero', 'sergioset7@gmail.com', 20, 'Ornitorrinco2831!');
-    //     $usuarioprueba->cambiarPassword('Eagle2831!');
+    public function test_actualizarPassword()
+    {
+        // $usuario = new User(['Sergio Escudero', 'sergioset7@gmail.com', 'Ornitorrinco2831!']);
+        $usuarioprueba = new Usuario('Sergio Escudero', 'sergioset7@gmail.com', 20, 'Ornitorrinco2831!');
+        $usuarioprueba->cambiarPassword('Eagle2831!');
 
-    //     $this->assertSame($usuarioprueba->password, 'Eagle2831!');
-    // }
+        $this->assertSame($usuarioprueba->password, 'Eagle2831!');
+    }
 
 
 }
