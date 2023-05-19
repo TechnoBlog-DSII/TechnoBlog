@@ -3,20 +3,31 @@ function register(username, email, password) {
         return false;
         throw new Error('Faltan parametros');
     }
-    if (password.length < 8) {
+    if (username.length < 4) {
         return false;
-        throw new Error('Contraseña demasiado corta!');
+        throw new Error('Usuario demasiado corto!');
     }
     if (!email.includes('@')) {
         return false;
         throw new Error('Correo inválido!');
     }
-    if (username.length < 4) {
+    if (email.length < 8) {
         return false;
-        throw new Error('Usuario demasiado corto!');
+        throw new Error('Correo demasiado corto!');
+    }
+    if (password.length < 8) {
+        return false;
+        throw new Error('Contraseña demasiado corta!');
+    }
+    if (password.length > 20) {
+        return false;
+        throw new Error('Contraseña demasiado larga!');
+    }
+    if (password.includes(username)) {
+        return false;
+        throw new Error('Contraseña no puede contener el nombre de usuario!');
     }
     return true;
 }
-
 
 module.exports = register;
