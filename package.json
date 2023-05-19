@@ -3,7 +3,8 @@
     "scripts": {
         "test": "jest",
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "test:coverage": "jest --coverage"
     },
     "devDependencies": {
         "@alpinejs/focus": "^3.10.5",
