@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684530361780" clover="3.2.0">
-  <project timestamp="1684530361781" name="All files">
+<coverage generated="1684535152472" clover="3.2.0">
+  <project timestamp="1684535152473" name="All files">
     <metrics statements="16" coveredstatements="15" conditionals="17" coveredconditionals="16" methods="1" coveredmethods="1" elements="34" coveredelements="32" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
     <file name="register.js" path="D:\Repositorios\TechnoBlog\tests\Jest\register.js">
       <metrics statements="16" coveredstatements="15" conditionals="17" coveredconditionals="16" methods="1" coveredmethods="1"/>
