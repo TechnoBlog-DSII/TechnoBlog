@@ -6,6 +6,7 @@
 
         <x-validation-errors class="mb-4" />
 
+        <link rel="shortcut icon" href="images/logo_login.png">
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
