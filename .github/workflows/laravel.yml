@@ -17,7 +17,13 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 18
-    
+
+    - name: Setup PHP with Xdebug
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: '8.1'
+            coverage: xdebug
+            
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     
@@ -43,7 +49,7 @@ jobs:
       run: npm run test:coverage
 
     - name: Corremos tests de phpunit
-      run: vendor/bin/phpunit --coverage-text
+      run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
     - name: Construimos imagen docker
       run: docker build -t technoblog .
