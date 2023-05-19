@@ -53,5 +53,6 @@ jobs:
     - name: Corremos tests de phpunit
       run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
+
     - name: Construimos imagen docker
       run: docker build -t technoblog .

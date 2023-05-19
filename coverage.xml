@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1684537965">
+  <project timestamp="1684537965">
+    <file name="D:\Repositorios\TechnoBlog\app\Models\User.php">
+      <class name="App\Models\User" namespace="global">
+        <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </class>
+      <metrics loc="62" ncloc="42" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="D:\Repositorios\TechnoBlog\app\Models\Usuario.php">
+      <class name="App\Models\Usuario" namespace="global">
+        <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="17" coveredelements="17"/>
+      </class>
+      <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="23" type="stmt" count="7"/>
+      <line num="24" type="stmt" count="7"/>
+      <line num="25" type="stmt" count="7"/>
+      <line num="26" type="stmt" count="7"/>
+      <line num="29" type="method" name="cambiarNombre" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="35" type="method" name="cambiarEdad" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="41" type="method" name="cambiarEmail" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="47" type="method" name="cambiarPassword" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="50" type="stmt" count="1"/>
+      <metrics loc="54" ncloc="48" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="17" coveredelements="17"/>
+    </file>
+    <metrics files="2" loc="116" ncloc="90" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="17" coveredelements="17"/>
+  </project>
+</coverage>
