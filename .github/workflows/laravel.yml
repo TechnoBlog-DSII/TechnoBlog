@@ -2,7 +2,7 @@ name: Laravel
 
 on:
   push:
-    branches: [ "TC-2-Como-usuario-podr-registrarme-en-la-p-gina-web-para-poder-hacer-uso-de-varias-funcionalidades" ]
+    branches: [ "TC-2-Como-usuario-podr-registrarme-en-la-p-gina-web-para-poder-hacer-uso-de-varias-funcionalidades", "development" ]
   pull_request:
     branches: [ "main" ]
 
