@@ -27,16 +27,28 @@ class Usuario
         $this->password = $password;
     }
 
-    public function defaultName($nombre): bool
+    public function cambiarNombre($nombre): bool
     {
         $this->name = $nombre;
         return True;
     }
 
-    public function minAge(): int
+    public function cambiarEdad($edad): int
     {
-        $this->age = 18;
+        $this->age = $edad;
         return $this->age;
+    }
+
+    public function cambiarEmail($email): string
+    {
+        $this->email = $email;
+        return $this->email;
+    }
+
+    public function cambiarPassword($contrasenia): string
+    {
+        $this->password = $contrasenia;
+        return $this->password;
     }
 
 
