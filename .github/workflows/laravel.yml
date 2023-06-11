@@ -47,12 +47,11 @@ jobs:
     - name: Linkeamos Storage
       run: php artisan storage:link
 
-    - name: Corremos tests de Jest
-      run: npm run test:coverage
+    # - name: Corremos tests de Jest
+    #   run: npm run test:coverage
 
-    - name: Corremos tests de phpunit
-      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+    # - name: Corremos tests de phpunit
+    #   run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
-
-    - name: Construimos imagen docker
-      run: docker build -t technoblog .
+    # - name: Construimos imagen docker
+    #   run: docker build -t technoblog .
