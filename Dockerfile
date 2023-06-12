@@ -8,7 +8,7 @@ ENV APP_ENV=production
 ENV APP_DEBUG=false
 
 FROM node:18-alpine
-WORKDIR /app
+WORKDIR /
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm install 
 COPY . .
