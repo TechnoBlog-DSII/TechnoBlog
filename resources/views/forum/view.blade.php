@@ -1,1 +1,1 @@
-<p>Aqui verás foros</p>
+<p>Aqui verás un foro</p>

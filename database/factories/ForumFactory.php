@@ -17,14 +17,14 @@ class ForumFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->title(),
+            'title' => $this->faker->words(3, true),
             'slug' => $this->faker->slug(),
             'description' => $this->faker->text(),
             'content' => $this->faker->text(),
             'image' => $this->faker->imageUrl(),
             'category_id' => \App\Models\Category::factory(),
             'user_id' => \App\Models\User::factory(),
-            
+
         ];
     }
 }

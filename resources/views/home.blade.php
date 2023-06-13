@@ -52,12 +52,14 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
 
-                            <li><a href="{{ route('forum.index') }}" class="active">Explorar foros</a></li>
 
                             @if (Route::has('login'))
                                 @auth
+
+                                    <li><a href="{{ route('forum.index') }}" class="active">Explorar foros</a></li>
                                     {{-- <li> <a href="{{ url('/dashboard') }}">{{ auth()->user()->name }}</a></li> --}}
                                 @else
+                                    <li><a href="{{ route('login') }}" class="active">Explorar foros</a></li>
                                     <li> <a href="{{ route('login') }}">Iniciar Sesión</a></li>
                                     @if (Route::has('register'))
                                         <li><a href="{{ route('register') }}">Registrarse</a></li>
