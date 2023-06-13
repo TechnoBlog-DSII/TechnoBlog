@@ -52,9 +52,11 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
 
+                            <li><a href="{{ route('forum.index') }}" class="active">Explorar foros</a></li>
+
                             @if (Route::has('login'))
                                 @auth
-                                    <li> <a href="{{ url('/dashboard') }}">{{ auth()->user()->name }}</a></li>
+                                    {{-- <li> <a href="{{ url('/dashboard') }}">{{ auth()->user()->name }}</a></li> --}}
                                 @else
                                     <li> <a href="{{ route('login') }}">Iniciar Sesión</a></li>
                                     @if (Route::has('register'))
@@ -62,13 +64,13 @@
                                     @endif
                                     {{-- <li><a href="streams.html"></a></li> --}}
                                 @endauth
+
+                            @endif
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
                 </div>
-                @endif
-                </ul>
-                <!-- ***** Menu End ***** -->
-                </nav>
             </div>
-        </div>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->

@@ -17,13 +17,19 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('forum.index') }}" :active="request()->routeIs('forum')">
                         {{ __('Explorar foros') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('forums') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('forum.index') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Mis foros') }}
                     </x-nav-link>
                 </div>

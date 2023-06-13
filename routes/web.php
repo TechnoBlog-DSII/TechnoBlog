@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,38 +26,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-
-    Route::get('/create.category', function () {
-        return view('create.category');
-    })->name('create.category');
-
-    Route::get('/edit.category', function () {
-        return view('edit.category');
-    })->name('edit.category');
-    
-
-    //Foros
-
-    Route::get('/forums', function () {
-        return view('forum.index');
-    })->name('forums');
-
-    Route::get('/view.forum', function () {
-        return view('forum.view');
-    })->name('view.forum');
-
-    Route::get('/create.forum', function () {
-        return view('forum.create');
-    })->name('create.forum');
-
-    Route::get('/edit.forum', function () {
-        return view('forum.edit');
-    })->name('edit.forum');
-
-    Route::get('/create.forum', function () {
-        return view('forum.delete');
-    })->name('create.forum');
-
-    
-
 });
+
+//Foros
+Route::resource('forum', ForumController::class);
+
+

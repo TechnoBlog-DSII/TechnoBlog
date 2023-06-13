@@ -12,12 +12,10 @@ class ForumController extends Controller
      */
     public function index()
     {
-        
 
+        $forums = Forum::latest()->paginate(10);
 
-        return view('forum.index', [
-            'forums' => Forum::latest()->paginate(10)
-        ]);
+        return view ('forum.index', compact('forums'));
     }
 
     /**
