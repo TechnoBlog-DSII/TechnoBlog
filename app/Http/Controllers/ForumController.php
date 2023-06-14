@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Forum;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Faker\Factory as Faker;
 
 class ForumController extends Controller
 {
@@ -38,7 +40,26 @@ class ForumController extends Controller
      */
     public function store(Request $request)
     {
-        // return view('forum.store');
+
+        $request->validate([
+            'title' => 'required|min:3|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'required|min:3|max:255',
+            'content' => 'required|min:3|max:255',
+        ]);
+
+        $forum = Forum::create([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'description' => $request->description,
+            'content' => $request->content,
+            'image' => $request->image ?? 'https://www.eltiempo.com/files/image_1200_680/uploads/2019/12/07/5dec47012d257.jpeg',
+            'category_id' => $request->category_id,
+            'user_id' => auth()->user()->id,
+        ]);
+
+
+        return view('forum.view', compact('forum'));
     }
 
     /**

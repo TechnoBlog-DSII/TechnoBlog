@@ -32,8 +32,6 @@
 </head>
 
 
-
-
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -47,15 +45,20 @@
                 <form action="{{ route('forum.store') }}" method="POST">
                     @csrf
 
+                    <x-validation-errors class="mb-4" />
+
                     <div>
                         <label for='title'>
                             Título del foro
                         </label>
 
-                        <input type="text" name="title" id="title" class="form-control mb-2"
-                            placeholder="Título del foro" required />
+                        <input type="text" name="title" value="{{ old('title') }}" id="title"
+                            class="form-control mb-2" placeholder="Título del foro" required />
+
+                        <x-input-error for="title" />
                     </div>
 
+                    <hr>
 
                     <div>
                         <label for="category_id">Categoria</label>
@@ -63,18 +66,38 @@
                         <select name="category_id" id="category_id" class="form-control mb-2" required>
                             <option value="">-- Seleccione una categoría --</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" @selected(old('category_id'))>{{ $category->name }}
+                                </option>
                             @endforeach
+                        </select>
 
                     </div>
+
+                    <hr>
 
                     <div>
                         <label for='description'>
                             Descripción del foro
                         </label>
 
-                        <textarea name="description" id="description" class="form-control mb-2" placeholder="Descripción del foro" required></textarea>
+                        <textarea name="description" id="description" class="form-control mb-2" placeholder="Descripción del foro" required>{{ old('description') }}</textarea>
+
+                        <x-input-error for="description" />
                     </div>
+
+                    <hr>
+
+                    <div>
+                        <label for='content'>
+                            Contenido del foro
+                        </label>
+
+                        <textarea name="content" id="content" class="form-control mb-2" placeholder="Contenido del foro" required>{{ old('content') }}</textarea>
+
+                        <x-input-error for="content" />
+                    </div>
+
+                    <hr>
 
 
                     {{-- <div>
