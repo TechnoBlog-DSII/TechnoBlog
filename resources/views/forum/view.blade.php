@@ -5,10 +5,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/logo_login.png">
+    <link rel="shortcut icon" href=" {{ asset('images/logo_login.png') }}">
     <title>TechnoBlog - Foro de tecnología</title>
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo-cyborg-gaming.css') }}">
@@ -42,9 +42,8 @@
                 </h2>
             </x-slot>
 
-
             <x-button>
-                <a href="{{ route('forum.index', ['personal' => true]) }}">Volver a mis foros</a>
+                <a href="{{ route('forum.index') }}">Volver a los foros</a>
             </x-button>
 
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">

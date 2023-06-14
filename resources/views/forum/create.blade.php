@@ -5,10 +5,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/logo_login.png">
+    <link rel="shortcut icon" href=" {{ asset('images/logo_login.png') }}">
     <title>TechnoBlog - Foro de tecnología</title>
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo-cyborg-gaming.css') }}">
@@ -60,6 +60,14 @@
 
                     <hr>
 
+                    <figure>
+                        <img id=imagen
+                            src="https://www.eltiempo.com/files/image_1200_680/uploads/2019/12/07/5dec47012d257.jpeg"
+                            alt="Imagen del foro">
+                    </figure>
+
+                    <hr>
+
                     <div>
                         <label for="category_id">Categoria</label>
 
@@ -92,7 +100,7 @@
                             Contenido del foro
                         </label>
 
-                        <textarea name="content" id="content" class="form-control mb-2" placeholder="Contenido del foro" required>{{ old('content') }}</textarea>
+                        <textarea name='content' id="editor" class="form-control mb-2" placeholder="Contenido del foro">{{ old('content') }}</textarea>
 
                         <x-input-error for="content" />
                     </div>
@@ -100,17 +108,7 @@
                     <hr>
 
 
-                    {{-- <div>
-                        <label for='image'>
-                            Imagen del foro
-                        </label>
-
-                        <input type="text" name="image" id="image" class="form-control mb-2"
-                            placeholder="Imagen del foro" required />
-                    </div> --}}
-
                     <button type="submit" class="btn btn-primary">Crear foro</button>
-
 
 
                 </form>
@@ -121,3 +119,13 @@
     </div>
 
 </x-app-layout>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>

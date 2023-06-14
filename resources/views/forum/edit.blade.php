@@ -5,10 +5,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/logo_login.png">
+    <link rel="shortcut icon" href=" {{ asset('images/logo_login.png') }}">
     <title>TechnoBlog - Foro de tecnología</title>
 
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/templatemo-cyborg-gaming.css') }}">
@@ -47,7 +47,7 @@
 
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                <form action="{{ route('forum.update', $forum) }}" method="POST">
+                <form action="{{ route('forum.update', $forum) }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     @method('PUT')
@@ -65,6 +65,26 @@
                         <x-input-error for="title" />
                     </div>
 
+                    <hr>
+
+                    <div class="mb-6 relative">
+
+                        <figure>
+                            <img id=imgPreview src="{{ $forum->image }}"
+                                class="aspect-[16/9] w-full object-cover object-center" alt="{{ $forum->title }}">
+                        </figure>
+
+                        <div class="absolute top-8 right-8">
+                            <label class="flex items-center px-4 py-2 bg-white rounded-lg cursor-pointer">
+
+                                <i class="fa-solid fa-camera mr-2"></i>
+                                Actualizar imagen
+                                <input type="file" name="image" id="" accept="image/*"
+                                    onchange="previewImage(event, '#imgPreview')" class="hidden" />
+                            </label>
+                        </div>
+
+                    </div>
                     <hr>
 
                     <div>
@@ -108,16 +128,6 @@
 
                     <hr>
 
-
-                    {{-- <div>
-                        <label for='image'>
-                            Imagen del foro
-                        </label>
-
-                        <input type="text" name="image" id="image" class="form-control mb-2"
-                            placeholder="Imagen del foro" required />
-                    </div> --}}
-
                     <button type="submit" class="btn btn-primary">Actualizar foro</button>
 
 
@@ -139,4 +149,26 @@
         .catch(error => {
             console.error(error);
         });
+
+    function previewImage(event, querySelector) {
+
+        //Recuperamos el input que desencadeno la acción
+        const input = event.target;
+
+        //Recuperamos la etiqueta img donde cargaremos la imagen
+        $imgPreview = document.querySelector(querySelector);
+
+        // Verificamos si existe una imagen seleccionada
+        if (!input.files.length) return
+
+        //Recuperamos el archivo subido
+        file = input.files[0];
+
+        //Creamos la url
+        objectURL = URL.createObjectURL(file);
+
+        //Modificamos el atributo src de la etiqueta img
+        $imgPreview.src = objectURL;
+
+    }
 </script>

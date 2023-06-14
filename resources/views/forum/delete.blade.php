@@ -1,1 +1,0 @@
-<p>Aqui borrarás foros</p>
