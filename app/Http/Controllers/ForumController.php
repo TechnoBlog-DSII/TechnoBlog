@@ -128,7 +128,9 @@ class ForumController extends Controller
     {
         $img = $forum->image;
         $forum->delete();
-        Storage::delete($img);
+        if ($img) {
+            Storage::delete($img);
+        }
         return redirect()->route('forum.index', ['personal' => true])->with('success', 'Foro borrado correctamente');
     }
 }
