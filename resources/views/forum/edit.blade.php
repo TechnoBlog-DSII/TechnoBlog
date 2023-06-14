@@ -70,7 +70,7 @@
                     <div class="mb-6 relative">
 
                         <figure>
-                            <img id=imgPreview src="{{ old('imgPreview', $forum->imageUrl) }}"
+                            <img name='imgPreview' id=imgPreview src="{{ old('imgPreview', $forum->imageUrl) }}"
                                 class="aspect-[16/9] w-full object-cover object-center" alt="{{ $forum->title }}">
                         </figure>
 
