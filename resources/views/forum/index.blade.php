@@ -52,7 +52,7 @@
                     @foreach ($forums as $forum)
                         <li class="grid grid-cols-2 gap-4">
                             <figure>
-                                <img id=imagen src="{{ $forum->image }}" alt="{{ $forum->title }}">
+                                <img id=imagen src="{{ $forum->imageUrl }}" alt="{{ $forum->title }}">
                             </figure>
 
                             <div>

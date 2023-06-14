@@ -57,7 +57,7 @@
 
                 <hr>
 
-                <img src="{{ $forum->image }}" alt="">
+                <img src="{{ $forum->imageUrl }}" alt="">
 
                 <hr>
 

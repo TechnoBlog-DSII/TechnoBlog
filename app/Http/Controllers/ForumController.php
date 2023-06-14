@@ -18,7 +18,7 @@ class ForumController extends Controller
     {
         $personal = $request->personal ?? false;
 
-        $forums = Forum::latest()->paginate(10);
+        $forums = Forum::all();
 
         if ($personal == true) {
             $forums = Forum::where('user_id', auth()->user()->id)->latest()->paginate(10);
@@ -54,7 +54,7 @@ class ForumController extends Controller
             'slug' => Str::slug($request->title),
             'description' => $request->description,
             'content' => $request->content,
-            'image' => $request->image ?? 'https://www.eltiempo.com/files/image_1200_680/uploads/2019/12/07/5dec47012d257.jpeg',
+            'image' => $request->image,
             'category_id' => $request->category_id,
             'user_id' => auth()->user()->id,
         ]);
@@ -103,11 +103,18 @@ class ForumController extends Controller
             }
         }
 
-        $forum->slug = $newSlug;
+        $img = $forum->image;
+
         $forum->update($request->all());
+        $forum->slug = $newSlug;
 
         if ($request->hasFile('image')) {
-            Storage::put('forums', $request->file('image'));
+            if ($img) {
+                Storage::delete($img);
+            }
+            $newImg = Storage::put('forums', $request->file('image'));
+            $forum->image = $newImg;
+            $forum->save();
         }
 
 

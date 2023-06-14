@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Forum>
@@ -25,13 +26,11 @@ class ForumFactory extends Factory
 
         return [
             'title' => $title,
-            'slug' => $this->faker->slug($title),
+            'slug' => Str::slug($title),
             'description' => $this->faker->text(200),
-            'content' => $this->faker->paragraph(5, true),
-            'image' => $this->faker->imageUrl(),
+            'content' => $this->faker->paragraph(4, true),
             'category_id' => $this->faker->randomElement($categoryIds),
             'user_id' => $this->faker->randomElement($usersIds),
-
         ];
     }
 }
