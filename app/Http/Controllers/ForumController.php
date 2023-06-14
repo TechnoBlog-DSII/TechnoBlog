@@ -7,6 +7,7 @@ use App\Models\Forum;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Faker\Factory as Faker;
+use Illuminate\Support\Facades\Storage;
 
 class ForumController extends Controller
 {
@@ -75,7 +76,9 @@ class ForumController extends Controller
      */
     public function edit(Forum $forum)
     {
-        return view('forum.edit', compact('forum'));
+        $categories = Category::all();
+
+        return view('forum.edit', compact('forum', 'categories'));
     }
 
     /**
@@ -83,7 +86,26 @@ class ForumController extends Controller
      */
     public function update(Request $request, Forum $forum)
     {
-        return view('forum.update');
+        $request->validate([
+            'title' => 'required|min:3|max:255|unique:forums,title,' . $forum->id . ',id',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'required|min:3|max:255',
+            'content' => 'required|min:3|max:255',
+        ]);
+
+        $newSlug = Str::slug($request->title);
+
+        if ($newSlug !== $forum->slug) {
+            $slugExists = Forum::where('slug', $newSlug)->exists();
+            if ($slugExists) {
+                return redirect()->back()->withErrors(['title' => 'Este títutlo ya existe, porfavor escoge otro título.']);
+            }
+        }
+
+        $forum->slug = $newSlug;
+        $forum->update($request->all());
+
+        return view('forum.view', compact('forum'))->with('success', 'Foro actualizado correctamente');
     }
 
     /**
@@ -91,6 +113,9 @@ class ForumController extends Controller
      */
     public function destroy(Forum $forum)
     {
-        return view('forum.delete');
+        $img = $forum->image;
+        $forum->delete();
+        Storage::delete($img);
+        return redirect()->route('forum.index', ['personal' => true])->with('success', 'Foro borrado correctamente');
     }
 }

@@ -78,9 +78,13 @@
                                         <a href="{{ route('forum.edit', $forum) }}">Editar este foro</a>
                                     </x-button>
 
-                                    <x-button>
-                                        <a href="{{ route('forum.edit', $forum) }}">Eliminar este foro</a>
-                                    </x-button>
+                                    <form action="{{ route('forum.destroy', $forum) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <x-button type='submit'>
+                                            Eliminar este foro
+                                        </x-button>
+                                    </form>
                                 @endif
 
                             </div>

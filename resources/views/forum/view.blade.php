@@ -41,6 +41,12 @@
                     {{ __('¡Disfruta leyendo este grandioso foro!') }}
                 </h2>
             </x-slot>
+
+
+            <x-button>
+                <a href="{{ route('forum.index', ['personal' => true]) }}">Volver a mis foros</a>
+            </x-button>
+
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
                 <label for="title">{{ $forum->title }}</label>
@@ -52,15 +58,21 @@
 
                 <hr>
 
-                <img src="{{ $forum->image}}" alt="">
+                <img src="{{ $forum->image }}" alt="">
 
                 <hr>
 
                 <label for="description">{{ $forum->description }}</label>
 
                 <hr>
+                <div>
+                    {!! $forum->content !!}
+                </div>
 
-                <label for="content">{{ $forum->content }}</label>
+                <hr>
+
+                <label for="user">Autor de este foro:
+                    {{ App\Models\User::where('id', $forum->user_id)->first()->name }}</label>
 
             </div>
         </div>

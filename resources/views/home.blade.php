@@ -43,7 +43,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="images/Logo Technoblog.png" alt="">
+                            <img src="images/LogoTechnoblog.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Search End ***** -->
