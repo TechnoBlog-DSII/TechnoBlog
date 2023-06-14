@@ -46,7 +46,7 @@ class ForumController extends Controller
             'title' => 'required|min:3|max:255',
             'category_id' => 'required|exists:categories,id',
             'description' => 'required|min:3|max:255',
-            'content' => 'required|min:3|max:255',
+            'content' => 'required|min:3',
         ]);
 
         $forum = Forum::create([
