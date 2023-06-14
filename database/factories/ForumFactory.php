@@ -21,11 +21,13 @@ class ForumFactory extends Factory
         $categoryIds = Category::pluck('id')->toArray();
         $usersIds = \App\Models\User::pluck('id')->toArray();
 
+        $title = $this->faker->sentence();
+
         return [
-            'title' => $this->faker->words(3, true),
-            'slug' => $this->faker->slug(),
-            'description' => $this->faker->text(),
-            'content' => $this->faker->text(),
+            'title' => $title,
+            'slug' => $this->faker->slug($title),
+            'description' => $this->faker->text(200),
+            'content' => $this->faker->paragraph(5, true),
             'image' => $this->faker->imageUrl(),
             'category_id' => $this->faker->randomElement($categoryIds),
             'user_id' => $this->faker->randomElement($usersIds),

@@ -86,6 +86,7 @@ class ForumController extends Controller
      */
     public function update(Request $request, Forum $forum)
     {
+
         $request->validate([
             'title' => 'required|min:3|max:255|unique:forums,title,' . $forum->id . ',id',
             'category_id' => 'required|exists:categories,id',
@@ -104,6 +105,11 @@ class ForumController extends Controller
 
         $forum->slug = $newSlug;
         $forum->update($request->all());
+
+        if ($request->hasFile('image')) {
+            Storage::put('forums', $request->file('image'));
+        }
+
 
         return view('forum.view', compact('forum'))->with('success', 'Foro actualizado correctamente');
     }
