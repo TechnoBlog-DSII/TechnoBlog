@@ -43,6 +43,12 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <ul class="space-y-8">
 
+                    @if ($personal == true)
+                        <x-button>
+                            <a href="{{ route('forum.create') }}">Crear un foro</a>
+                        </x-button>
+                    @endif
+
                     @foreach ($forums as $forum)
                         <li class="grid grid-cols-2 gap-4">
                             <figure>
@@ -66,6 +72,17 @@
                                 <x-button>
                                     <a href="{{ route('forum.show', $forum) }}">Leer este foro</a>
                                 </x-button>
+
+                                @if ($personal == true)
+                                    <x-button>
+                                        <a href="{{ route('forum.edit', $forum) }}">Editar este foro</a>
+                                    </x-button>
+
+                                    <x-button>
+                                        <a href="{{ route('forum.edit', $forum) }}">Eliminar este foro</a>
+                                    </x-button>
+                                @endif
+
                             </div>
 
                         </li>

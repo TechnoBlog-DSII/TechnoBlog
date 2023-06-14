@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Forum;
 use Illuminate\Http\Request;
 
@@ -10,12 +11,17 @@ class ForumController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $personal = $request->personal ?? false;
 
         $forums = Forum::latest()->paginate(10);
 
-        return view ('forum.index', compact('forums'));
+        if ($personal == true) {
+            $forums = Forum::where('user_id', auth()->user()->id)->latest()->paginate(10);
+        }
+
+        return view('forum.index', compact('forums', 'personal'));
     }
 
     /**
@@ -23,7 +29,8 @@ class ForumController extends Controller
      */
     public function create()
     {
-        return view('forum.create');
+        $categories = Category::all();
+        return view('forum.create', compact('categories'));
     }
 
     /**
