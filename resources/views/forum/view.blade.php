@@ -46,9 +46,9 @@
                 <a href="{{ route('forum.index') }}">Volver a los foros</a>
             </x-button>
 
-            <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg text-center">
 
-                <label for="title" class="blanco">{{ $forum->title }}</label>
+                <label for="title" class="titulo">{{ $forum->title }}</label>
 
                 <hr>
 
@@ -64,13 +64,13 @@
                 <label for="description" class="blanco">{{ $forum->description }}</label>
 
                 <hr>
-                <div class="blanco">
-                    {!! $forum->content !!}
+                <div class="texto">
+                    {!!$forum->content !!}
                 </div>
 
                 <hr>
 
-                <label for="user" class="blanco">Autor de este foro:
+                <label for="user" class="autor">Autor de este foro:
                     {{ App\Models\User::where('id', $forum->user_id)->first()->name }}</label>
 
             </div>
@@ -79,6 +79,21 @@
     <style>
         .blanco {
           color: white;
+        }
+        .titulo{
+            color: white;
+            font-size: 200%;
+            text-align: center;
+        }
+        .autor{
+            color: white;
+            font-size: 150%;
+            text-align: center;
+        }
+        .texto{
+            color: white;
+            font-size: 125%;
+            text-align: center;
         }
       </style>
 </x-app-layout>

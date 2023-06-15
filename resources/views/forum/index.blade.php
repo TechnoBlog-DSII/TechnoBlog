@@ -20,7 +20,8 @@
         #titulo {
             margin-top: 2%;
             color: #f5e7e7;
-            font-size: 200%;
+            font-size: 300%;
+            text-align: center;
         }
 
         #imagen {
@@ -40,8 +41,8 @@
                     {{ __('Aquí podrás ver los foros más recientes') }}
                 </h2>
             </x-slot>
-            <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg ">
-                <ul class="space-y-0 bg-repeat-space">
+            <div class="bg-gray-500  shadow-xl sm:rounded-lg overflow-visible">
+                <ul class="space-y-4 space-x-0 bg-repeat-space ">
 
                     @if ($personal == true)
                         <x-button>
@@ -57,13 +58,15 @@
                                 <img id=imagen src="{{ $forum->imageUrl }}" alt="{{ $forum->title }}">
                             </figure>
                         </li>
-                        <div>
+                        <div >
+                            <div class="contenedor2">
+                                <h1 id=titulo  >{{ $forum->title }}</h1>
+                            </div>
+                            
 
-                            <h1 id=titulo class="font-semibold">{{ $forum->title }}</h1>
-
-                            <hr class="mt-1 mb-2">
+                            <hr class="mt-2 mb-2">
                             <span
-                                class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-100">Autor:
+                                class="bg-blue-100 text-blue-800 text-base font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-100 font-mono">Autor:
                                 {{ $forum->user->name }}</span>
                             
                             <x-label>
@@ -72,7 +75,7 @@
                                 
                             </x-label>
                             <br/>
-                            <x-button>
+                            <x-button >
                                 <a href="{{ route('forum.show', $forum) }}">Leer este foro</a>
                             </x-button>
 
@@ -107,6 +110,29 @@
           border: 1px solid black;
           padding: 10px;
         }
+        .titulo {
+    font-size: 24px;
+    color: white;
+  }
+  .centrado {
+    margin-left: auto;
+    margin-right: auto;
+    /* Añade otros estilos según tus necesidades */
+  }
+  .contenedortitulo {
+    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px; /* Añade relleno para separar el contenido del borde del contenedor */
+    border: 1px solid black; /* Agrega un borde para visualizar el contenedor */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde del contenedor */
+  }
+
+  #tituloforo {
+    font-size: 10px; /* Ajusta el tamaño de fuente según tus necesidades */
+    text-align: center;
+    word-wrap: break-word; /* Permite que el texto se ajuste automáticamente al ancho del contenedor */
+    word-break: break-word; /* Permite que las palabras largas se dividan en varias líneas si es necesario */
+  }
       </style>
       
       

@@ -84,7 +84,7 @@
                     <hr>
 
                     <div>
-                        <label for='description'>
+                        <label for='description' >
                             Descripción del foro
                         </label>
 
@@ -96,7 +96,7 @@
                     <hr>
 
                     <div>
-                        <label for='content'>
+                        <label for='content' class="blanco">
                             Contenido del foro
                         </label>
 
@@ -117,6 +117,16 @@
             </div>
         </div>
     </div>
+    <style>
+        .blanco {
+          color: white;
+        }
+        .titulo{
+            color: white;
+            size: large;
+        }
+
+      </style>
 
 </x-app-layout>
 
