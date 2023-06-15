@@ -36,11 +36,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-slot name="header">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                <h2 class="font-semibold text-xl text-gray-200 leading-tight">
                     {{ __('Aquí podrás crear un foro para que se vea en la página principal') }}
                 </h2>
             </x-slot>
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-gray-400 overflow-hidden shadow-xl sm:rounded-lg">
 
                 <form action="{{ route('forum.store') }}" method="POST">
                     @csrf

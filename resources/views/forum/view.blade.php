@@ -19,7 +19,7 @@
     <style>
         #titulo {
             margin-top: 2%;
-            color: #311e1e;
+            color: #ffffff;
             font-size: 200%;
         }
 
@@ -37,7 +37,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-slot name="header">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                <h2 class="font-semibold text-xl text-gray-200 leading-tight">
                     {{ __('¡Disfruta leyendo este grandioso foro!') }}
                 </h2>
             </x-slot>
@@ -46,13 +46,13 @@
                 <a href="{{ route('forum.index') }}">Volver a los foros</a>
             </x-button>
 
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg">
 
-                <label for="title">{{ $forum->title }}</label>
+                <label for="title" class="blanco">{{ $forum->title }}</label>
 
                 <hr>
 
-                <label for="category">Categoria:
+                <label for="category" class="blanco">Categoria:
                     {{ App\Models\Category::where('id', $forum->category_id)->first()->name }}</label>
 
                 <hr>
@@ -61,20 +61,24 @@
 
                 <hr>
 
-                <label for="description">{{ $forum->description }}</label>
+                <label for="description" class="blanco">{{ $forum->description }}</label>
 
                 <hr>
-                <div>
+                <div class="blanco">
                     {!! $forum->content !!}
                 </div>
 
                 <hr>
 
-                <label for="user">Autor de este foro:
+                <label for="user" class="blanco">Autor de este foro:
                     {{ App\Models\User::where('id', $forum->user_id)->first()->name }}</label>
 
             </div>
         </div>
     </div>
-
+    <style>
+        .blanco {
+          color: white;
+        }
+      </style>
 </x-app-layout>
