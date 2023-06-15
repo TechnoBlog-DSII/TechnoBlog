@@ -19,7 +19,7 @@
     <style>
         #titulo {
             margin-top: 2%;
-            color: #311e1e;
+            color: #f5e7e7;
             font-size: 200%;
         }
 
@@ -36,12 +36,12 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-slot name="header">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                <h2 class="font-semibold text-xl text-gray-100 leading-tight">
                     {{ __('Aquí podrás ver los foros más recientes') }}
                 </h2>
             </x-slot>
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <ul class="space-y-8">
+            <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg ">
+                <ul class="space-y-0 bg-repeat-space">
 
                     @if ($personal == true)
                         <x-button>
@@ -50,50 +50,64 @@
                     @endif
 
                     @foreach ($forums as $forum)
-                        <li class="grid grid-cols-2 gap-4">
+                        <hr>
+                        
+                        <li class=" ">
                             <figure>
                                 <img id=imagen src="{{ $forum->imageUrl }}" alt="{{ $forum->title }}">
                             </figure>
-
-                            <div>
-
-                                <h1 id=titulo class="font-semibold">{{ $forum->title }}</h1>
-
-                                <hr class="mt-1 mb-2">
-
-                                <span
-                                    class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Autor:
-                                    {{ $forum->user->name }}</span>
-
-                                <x-label>
-                                    {{ $forum->description }}
-                                </x-label>
-
-                                <x-button>
-                                    <a href="{{ route('forum.show', $forum) }}">Leer este foro</a>
-                                </x-button>
-
-                                @if ($personal == true)
-                                    <x-button>
-                                        <a href="{{ route('forum.edit', $forum) }}">Editar este foro</a>
-                                    </x-button>
-
-                                    <form action="{{ route('forum.destroy', $forum) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <x-button type='submit'>
-                                            Eliminar este foro
-                                        </x-button>
-                                    </form>
-                                @endif
-
-                            </div>
-
                         </li>
+                        <div>
+
+                            <h1 id=titulo class="font-semibold">{{ $forum->title }}</h1>
+
+                            <hr class="mt-1 mb-2">
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-100">Autor:
+                                {{ $forum->user->name }}</span>
+                            
+                            <x-label>
+                                <br/>
+                                {{ $forum->description }}
+                                
+                            </x-label>
+                            <br/>
+                            <x-button>
+                                <a href="{{ route('forum.show', $forum) }}">Leer este foro</a>
+                            </x-button>
+
+                            @if ($personal == true)
+                                <x-button>
+                                    <a href="{{ route('forum.edit', $forum) }}">Editar este foro</a>
+                                </x-button>
+                                
+                                <form action="{{ route('forum.destroy', $forum) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-button type='submit'>
+                                        Eliminar este foro
+                                    </x-button>
+                                </form>
+                                
+                            @endif
+
+                        </div>
                     @endforeach
                 </ul>
-            </div>
-        </div>
-    </div>
 
+            </div>
+
+        </div>
+
+    </div>
+    <style>
+        .contenedor  {
+          display: inline-block;
+          width: auto;
+          border: 1px solid black;
+          padding: 10px;
+        }
+      </style>
+      
+      
 </x-app-layout>
