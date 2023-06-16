@@ -33,19 +33,19 @@
 
 
 <x-app-layout>
-    <div class="py-12">
+    <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-slot name="header">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                <h2 class="font-semibold text-xl text-gray-200 leading-tight">
                     {{ __('Aquí podrás crear un foro para que se vea en la página principal') }}
                 </h2>
             </x-slot>
-
+            
             <x-button>
                 <a href="{{ route('forum.index', ['personal' => true]) }}">Volver a mis foros</a>
             </x-button>
-
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <br>
+            <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg">
 
                 <form action="{{ route('forum.update', $forum) }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -55,12 +55,12 @@
                     <x-validation-errors class="mb-4" />
 
                     <div>
-                        <label for='title'>
+                        <label for='title' style="font-size: 200%" class="ml-4">
                             Título del foro
                         </label>
 
                         <input type="text" name="title" value="{{ old('title', $forum->title) }}" id="title"
-                            class="form-control mb-2" placeholder="Título del foro" required />
+                            class="form-control mb-2 ml-2 bg-gray-400" placeholder="Título del foro" required />
 
                         <x-input-error for="title" />
                     </div>
@@ -77,7 +77,7 @@
                         <div class="absolute top-8 right-8">
                             <label class="flex items-center px-4 py-2 bg-white rounded-lg cursor-pointer">
 
-                                <i class="fa-solid fa-camera mr-2"></i>
+                                <i class="fa-solid fa-camera mr-2 ml-2"></i>
                                 Actualizar imagen
                                 <input type="file" name="image" id="" accept="image/*"
                                     onchange="previewImage(event, '#imgPreview')" class="hidden" />
@@ -88,9 +88,9 @@
                     <hr>
 
                     <div>
-                        <label for="category_id">Categoria</label>
+                        <label for="category_id" style="font-size: 200%" class="ml-4">Categoria</label>
 
-                        <select name="category_id" id="category_id" class="form-control mb-2" required>
+                        <select name="category_id" id="category_id" class="form-control mb-2 ml-4 bg-gray-400" required>
                             <option value="">-- Seleccione una categoría --</option>
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}" @selected(old('category_id', $forum->category_id) == $category->id)>{{ $category->name }}
@@ -103,11 +103,11 @@
                     <hr>
 
                     <div>
-                        <label for='description'>
+                        <label for='description'style="font-size: 200%" class="ml-4">
                             Descripción del foro
                         </label>
 
-                        <textarea name="description" id="description" class="form-control mb-2" placeholder="Descripción del foro" required>{{ old('description', $forum->description) }}</textarea>
+                        <textarea name="description" id="description" class="form-control mb-2 ml-4 bg-gray-400" placeholder="Descripción del foro" required>{{ old('description', $forum->description) }}</textarea>
 
                         <x-input-error for="description" />
                     </div>
@@ -115,11 +115,11 @@
                     <hr>
 
                     <div class="mb-4 mt-4 h-max">
-                        <label for='content' class="mb-4 mt-4">
+                        <label for='content' class="mb-4 mt-4 ml-4  "style="font-size: 200%" >
                             Contenido del foro
                         </label>
 
-                        <textarea name="content" id="editor" class="form-control mb-2" placeholder="Contenido del foro" required>{{ old('content', $forum->content) }}</textarea>
+                        <textarea name="content" id="editor" class="form-control mb-2 ml-4 bg-gray-400" placeholder="Contenido del foro" required>{{ old('content', $forum->content) }}</textarea>
 
 
                         <x-input-error for="content" />
@@ -127,9 +127,10 @@
                     </div>
 
                     <hr>
-
-                    <button type="submit" class="btn btn-primary">Actualizar foro</button>
-
+                    <br>
+                    <div style="display: flex; justify-content: space-around; margin:auto; align-items: baseline; align-content:center">
+                    <button type="submit" class="inline-flex items-center centrado px-4 py-4 bg-gray-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-400 focus:bg-gray-700 active:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Actualizar foro</button>
+                    </div>
 
 
                 </form>
@@ -141,11 +142,14 @@
 
 </x-app-layout>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js">
+</script>
 
 <script>
+    
     ClassicEditor
         .create(document.querySelector('#editor'))
+        
         .catch(error => {
             console.error(error);
         });

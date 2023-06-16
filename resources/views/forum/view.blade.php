@@ -20,7 +20,7 @@
         #titulo {
             margin-top: 2%;
             color: #ffffff;
-            font-size: 200%;
+            font-size: 400%;
         }
 
         #imagen {
@@ -34,7 +34,7 @@
 
 
 <x-app-layout>
-    <div class="py-12">
+    <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-slot name="header">
                 <h2 class="font-semibold text-xl text-gray-200 leading-tight">
@@ -45,27 +45,29 @@
             <x-button>
                 <a href="{{ route('forum.index') }}">Volver a los foros</a>
             </x-button>
-
+            <br>
             <div class="bg-gray-500 overflow-hidden shadow-xl sm:rounded-lg text-center">
 
                 <label for="title" class="titulo">{{ $forum->title }}</label>
 
                 <hr>
-
-                <label for="category" class="blanco">Categoria:
+                <br>
+                <label for="category" class="blanco categoria">Categoria:
                     {{ App\Models\Category::where('id', $forum->category_id)->first()->name }}</label>
-
+                    <br><br>
                 <hr>
 
                 <img src="{{ $forum->imageUrl }}" alt="">
 
                 <hr>
-
-                <label for="description" class="blanco">{{ $forum->description }}</label>
-
+                <br>
+                <label for="description" class="blanco texto">{{ $forum->description }}</label>
+                <br><br>
                 <hr>
                 <div class="texto">
+                    <br>
                     {!!$forum->content !!}
+                    <br><br>
                 </div>
 
                 <hr>
@@ -82,18 +84,23 @@
         }
         .titulo{
             color: white;
-            font-size: 200%;
+            font-size: 400%;
             text-align: center;
         }
         .autor{
             color: white;
-            font-size: 150%;
+            font-size: 220%;
             text-align: center;
         }
         .texto{
             color: white;
-            font-size: 125%;
+            font-size: 135%;
             text-align: center;
+        }
+        .categoria{
+            color: white;
+            font-size: 155%;
+            text-align: center; 
         }
       </style>
 </x-app-layout>

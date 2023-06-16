@@ -51,7 +51,7 @@
                     @endif
 
                     @foreach ($forums as $forum)
-                        <hr>
+                        
                         
                         <li class=" ">
                             <figure>
@@ -75,25 +75,29 @@
                                 
                             </x-label>
                             <br/>
-                            <x-button >
-                                <a href="{{ route('forum.show', $forum) }}">Leer este foro</a>
-                            </x-button>
-
-                            @if ($personal == true)
-                                <x-button>
-                                    <a href="{{ route('forum.edit', $forum) }}">Editar este foro</a>
+                            <div style="display: flex; justify-content: space-between; margin:auto; align-items: baseline;">
+                                <x-button style="">
+                                    <a href="{{ route('forum.show', $forum) }}">Leer este foro</a>
                                 </x-button>
                                 
-                                <form action="{{ route('forum.destroy', $forum) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <x-button type='submit'>
-                                        Eliminar este foro
+                                @if ($personal == true)
+                                    <x-button style="">
+                                        <a href="{{ route('forum.edit', $forum) }}">Editar este foro</a>
                                     </x-button>
-                                </form>
-                                
-                            @endif
-
+                                    <div style="display: flex; justify-content: space-between; margin:auto;">
+                                    <form action="{{ route('forum.destroy', $forum) }}" method="POST" style="">
+                                        @csrf
+                                        @method('DELETE')
+                                            
+                                        <x-button type='submit' class=" bg-red-400">
+                                            Eliminar este foro
+                                        </x-button>
+                                    </form>
+                                    </div>
+                                @endif
+                            </div>
+                            
+                            <hr class=" border-y-8">
                         </div>
                     @endforeach
                 </ul>
