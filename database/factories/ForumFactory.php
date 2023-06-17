@@ -27,7 +27,7 @@ class ForumFactory extends Factory
         return [
             'title' => $title,
             'slug' => Str::slug($title),
-            'description' => $this->faker->paragraph(5, true),
+            'description' => $this->faker->text(240),
             'content' => $this->faker->paragraph(10, true),
             'category_id' => $this->faker->randomElement($categoryIds),
             'user_id' => $this->faker->randomElement($usersIds),
