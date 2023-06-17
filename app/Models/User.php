@@ -58,4 +58,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Get the forums for the user.
+     */
+    public function forums()
+    {
+        return $this->hasMany(Forum::class);
+    }
 }

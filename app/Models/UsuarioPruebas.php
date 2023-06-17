@@ -4,20 +4,20 @@ namespace App\Models;
 
 use InvalidArgumentException;
 
-class Usuario
+class UsuarioPruebas
 {
     public string $name;
     public string $email;
     public int $age;
     public string $password;
-    
+
     /**
      * @param string $name
      * @param int $age
      * @param string $email
      * @param string $password
      */
-     
+
     public function __construct(string $name, string $email, int $age, string $password)
     {
         $this->age = $age;
@@ -49,6 +49,4 @@ class Usuario
         $this->password = $contrasenia;
         return $this->password;
     }
-
-
 }

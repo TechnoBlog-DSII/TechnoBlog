@@ -1,0 +1,49 @@
+name: CD/CI Pipeline
+
+on:
+  push:
+    branches:
+      - development
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --save-dev jest    
+      
+      - name: Run Jest tests
+        run: npm run test:coverage
+        
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: xdebug
+      
+      - name: Install composer dependencies
+        run: composer install
+
+      - name: Copy .env
+        run: cp .env.example .env
+
+      - name: Laravel key:generate
+        run: php artisan key:generate
+
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit
+        
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit --coverage-text
