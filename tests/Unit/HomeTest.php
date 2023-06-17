@@ -14,7 +14,7 @@ class HomeTest extends TestCase
     public function test_LoadHome(): void
     {
         $respuesta = $this->get('/');
-        // $respuesta->assertStatus(200);
+        $respuesta->assertStatus(200);
         $respuesta->assertSee('Bienvenido a TechnoBlog');
     }
 }
