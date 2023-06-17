@@ -37,8 +37,11 @@ jobs:
       - name: Install composer dependencies
         run: composer install
 
-      - name: Laravel dependencies
-        run: php -r "file_exists('.env') || copy('.env.example', '.env')" && php artisan key:generate
+      - name: Copy .env
+        run: cp .env.example .env
+
+      - name: Laravel key:generate
+        run: php artisan key:generate
 
       - name: Install PHPUnit
         run: composer require --dev phpunit/phpunit
