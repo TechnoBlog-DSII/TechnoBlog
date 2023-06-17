@@ -1,61 +1,40 @@
-name: Laravel
+name: CD/CI Pipeline
 
 on:
   push:
-    branches: 
-    - main
-    - development
+    branches:
+      - development
+      - main
   pull_request:
-    branches: 
-    - main
+    branches:
+      - main
 
 jobs:
-  - name: Corremos tests de Jest
+  build-and-test:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v1
-
-    # - uses: actions/setup-node@v3
-    #   with:
-    #     node-version: 18
-
-    - name: Corremos tests de Jest
-      run: npm run test:coverage
-
-  - name: Corremos tests de PHPUnit
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-
-    - name: Setup PHP with Xdebug
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.2'
-        coverage: xdebug
-
-    - name: Corremos tests de phpunit
-      run: vendor/bin/phpunit --coverage-clover=coverage.xml
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          
+      - name: Install dependencies
+        run: npm ci
       
-
-  # phpunit:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - uses: actions/checkout@v3
-  #   - name: Setup PHP with Xdebug
-  #     uses: shivammathur/setup-php@v2
-  #     with:
-  #       php-version: '8.2'
-  #       coverage: xdebug
-    
-  #   - name: Setup PHP with Xdebug
-  #    uses: shivammathur/setup-php@v2
-  #    with:
-  #      php-version: '8.1'
-  #      coverage: xdebug
-    
-  #   - name: Corremos tests de phpunit
-  #     run: vendor/bin/phpunit --coverage-clover=coverage.xml
-
-  # docker-image:
-    # - name: Construimos imagen docker
-    #   run: docker build -t technoblog .
+      - name: Run Jest tests
+        run: npm test
+        
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          
+      - name: Install PHPUnit
+        run: composer require --dev phpunit/phpunit
+        
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit
