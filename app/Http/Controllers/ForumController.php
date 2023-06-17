@@ -53,7 +53,7 @@ class ForumController extends Controller
             'title' => $request->title,
             'slug' => Str::slug($request->title),
             'description' => $request->description,
-            'content' => $request->content,
+            'content' => strip_tags($request->content),
             'image' => $request->image,
             'category_id' => $request->category_id,
             'user_id' => auth()->user()->id,
@@ -107,6 +107,7 @@ class ForumController extends Controller
 
         $forum->update($request->all());
         $forum->slug = $newSlug;
+        $forum->content = strip_tags($request->content);
 
         if ($request->hasFile('image')) {
             if ($img) {
@@ -114,9 +115,9 @@ class ForumController extends Controller
             }
             $newImg = Storage::put('forums', $request->file('image'));
             $forum->image = $newImg;
-            $forum->save();
         }
-
+        
+        $forum->save();
 
         return view('forum.view', compact('forum'))->with('success', 'Foro actualizado correctamente');
     }
