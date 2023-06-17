@@ -23,7 +23,7 @@ jobs:
           node-version: '18'
           
       - name: Run Jest tests
-        run: npm test:coverage
+        run: npm run test:coverage
         
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
