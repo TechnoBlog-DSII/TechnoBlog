@@ -2,7 +2,7 @@ name: Laravel
 
 on:
   push:
-    branches: [ "TC-2-Como-usuario-podr-registrarme-en-la-p-gina-web-para-poder-hacer-uso-de-varias-funcionalidades", "development", "main"]
+    branches: [ "development", "main"]
   pull_request:
     branches: [ "main" ]
 
@@ -20,38 +20,17 @@ jobs:
       with:
         node-version: 18
 
-    #- name: Setup PHP with Xdebug
-    #  uses: shivammathur/setup-php@v2
-    #  with:
-    #    php-version: '8.1'
-    #    coverage: xdebug
-            
-    - name: Copy .env
-      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Setup PHP with Xdebug
+     uses: shivammathur/setup-php@v2
+     with:
+       php-version: '8.1'
+       coverage: xdebug
     
-    - name: Composer update
-      run: composer update --prefer-dist --no-progress --ansi
-    
-    - name: Install Dependencies
-      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-    
-    - name: Npm update
-      run: npm update
-    
-    - name: Npm install
-      run: npm install
+    - name: Corremos tests de Jest
+      run: npm run test:coverage
 
-    - name: Generate key
-      run: php artisan key:generate
-
-    - name: Linkeamos Storage
-      run: php artisan storage:link
-
-    # - name: Corremos tests de Jest
-    #   run: npm run test:coverage
-
-    # - name: Corremos tests de phpunit
-    #   run: vendor/bin/phpunit --coverage-clover=coverage.xml
+    - name: Corremos tests de phpunit
+      run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
     # - name: Construimos imagen docker
     #   run: docker build -t technoblog .
