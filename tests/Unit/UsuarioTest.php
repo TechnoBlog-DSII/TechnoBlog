@@ -11,7 +11,7 @@ use function PHPUnit\Framework\assertSame;
 class UsuarioTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Esto es un test unitario.
      */
 
 
@@ -69,6 +69,4 @@ class UsuarioTest extends TestCase
 
         $this->assertSame($usuarioprueba->password, 'Eagle2831!');
     }
-
-
 }
