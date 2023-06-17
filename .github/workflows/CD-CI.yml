@@ -37,6 +37,9 @@ jobs:
       - name: Install composer dependencies
         run: composer install
 
+      - name: Laravel dependencies
+        run: php artisan key:generate
+
       - name: Install PHPUnit
         run: composer require --dev phpunit/phpunit
         
