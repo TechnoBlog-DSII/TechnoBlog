@@ -1,7 +1,7 @@
 const register = require('./register');
 
 test('verifies credentials for register', () => {
-  expect(register('SuperAdmin', 'admin@technoblog.com', 'ornitorinco751?')).toBe(true);
+  expect(register('SuperAdmin', 'admintechnoblog.com', 'ornitorinco751?')).toBe(true);
 });
 
 test('verifies credentials for register', () => {
