@@ -3,10 +3,7 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use App\Models\Categoria;
-
-use Ramsey\Uuid\Generator\DefaultNameGenerator;
-use function PHPUnit\Framework\assertSame;
+use App\Models\CategoriaPruebas;
 
 class CategoriaTest extends TestCase
 {
@@ -15,7 +12,7 @@ class CategoriaTest extends TestCase
      */
     public function test_comprobar_nombre_categoria()
     {
-        $categoriaPrueba = new Categoria('Inteligencia Artificial');
+        $categoriaPrueba = new CategoriaPruebas('Inteligencia Artificial');
 
         $this->assertNotNull($categoriaPrueba->name, 'El nombre de una categoria no puede estar vacio');
     }

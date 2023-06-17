@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use App\Models\Foro;
+use App\Models\ForoPruebas;
 
 class ForoTest extends TestCase
 {
@@ -24,7 +24,7 @@ class ForoTest extends TestCase
             'user_id' => 1,
         ];
 
-        $foroprueba = new Foro($datos);
+        $foroprueba = new ForoPruebas($datos);
 
         $this->assertNotNull($foroprueba->title, 'El título no puede ser vacio');
     }
