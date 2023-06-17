@@ -7,7 +7,17 @@ on:
     branches: [ "main" ]
 
 jobs:
-  laravel-tests:
+  npm-jest-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Corremos tests de Jest
+      run: npm run test:coverage
+
+  phpunit:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -16,21 +26,16 @@ jobs:
       with:
         php-version: '8.2'
         coverage: xdebug
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-
+    
     - name: Setup PHP with Xdebug
      uses: shivammathur/setup-php@v2
      with:
        php-version: '8.1'
        coverage: xdebug
     
-    - name: Corremos tests de Jest
-      run: npm run test:coverage
-
     - name: Corremos tests de phpunit
       run: vendor/bin/phpunit --coverage-clover=coverage.xml
 
+  # docker-image:
     # - name: Construimos imagen docker
     #   run: docker build -t technoblog .
