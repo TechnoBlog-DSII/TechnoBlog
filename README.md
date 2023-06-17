@@ -1,66 +1,45 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="public/images/LogoTechnoblog.png" alt="Logo Technoblog" style="display: block; margin: 0 auto;">
 </p>
 
-## About Laravel
+# About TechnoBlog
+Welcome to Technoblog! This is a forum website where you can publish, discuss, and share your ideas on a wide range of topics. Our goal is to create a vibrant and dynamic community where users can engage in constructive and enriching debates.Technoblog allows you to create and publish your own forums on topics that interest you. You can share your opinions, ask questions, present projects, or discuss any subject you wish.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Laravel Project with Jest and PhpUnit
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This is a Laravel project that uses the Jest framework and PhpUnit for unit and integration testing in the application based on a forum website.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requirements
+Before getting started, make sure you have the following installed:
 
-## Learning Laravel
+PHP 8.2.4 or higher,
+Composer,
+Node.js,
+XAMPP.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
+### 1. Install PHP dependencies by running the command.
+    composer install
+### 2. Install Node.js dependencies by running the command.
+    npm install
+### 3. Configure the environment file: Copy the .env.example file and rename it to .env. Then, update the environment variables according to your configuration. (Note that the .env file contains the environment variables. In the parts that are DB_, you can change them to be local; otherwise, you will access our test database.)
+### 4. Generate a new application key with the command.
+    php artisan key:generate
+### 5. Use this command for the storage shorcut
+    php artisan storage:link
+### 6. Run database migrations with the command.
+    php artisan migrate:fresh --seed
+### 7. Compile the assets with.
+     npm run dev
+### 8. Start a local development server with the command.
+    php artisan serve
+Now the console has to show you this link (example : http://127.0.0.1:8000) and you have access it.
+## Running Tests
+### To execute the unit, integration, and functional tests in the project, run the command for Jest tests.
+    npm run test 
+### And for PHP tests use.
+    vendor/bin/phpunit
+This will run all the tests defined in the tests folder and display the results in the console, including coverage and the number of tests executed.
 ## License
-
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
