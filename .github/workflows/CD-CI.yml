@@ -38,6 +38,7 @@ jobs:
         run: composer install
 
       - name: Laravel dependencies
+        run: copy .env.example .env
         run: php artisan key:generate
 
       - name: Install PHPUnit
