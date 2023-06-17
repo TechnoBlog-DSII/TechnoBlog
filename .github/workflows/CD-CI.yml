@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+          jest-version: '27'
           
       - name: Run Jest tests
         run: npm run test:coverage
