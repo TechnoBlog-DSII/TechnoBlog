@@ -11,7 +11,7 @@ class HomeTest extends TestCase
     /**
      * Esto es un test de integración.
      */
-    public function test_test(): void
+    public function test_LoadHome(): void
     {
         $respuesta = $this->get('/');
         $respuesta->assertStatus(200);
