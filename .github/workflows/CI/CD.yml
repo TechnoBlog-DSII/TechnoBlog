@@ -2,17 +2,22 @@ name: Laravel
 
 on:
   push:
-    branches: [ "development", "main"]
+    branches: 
+    - main
+    - development
   pull_request:
-    branches: [ "main" ]
+    branches: 
+    - main
 
 jobs:
   npm-jest-test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - uses: actions/checkout@v1
+
+    # - uses: actions/setup-node@v3
+    #   with:
+    #     node-version: 18
 
     - name: Corremos tests de Jest
       run: npm run test:coverage
