@@ -41,5 +41,16 @@ Now the console has to show you this link (example : http://127.0.0.1:8000) and 
 ### And for PHP tests use.
     vendor/bin/phpunit
 This will run all the tests defined in the tests folder and display the results in the console, including coverage and the number of tests executed.
+## CD/CI pipeline
+![image](https://github.com/TechnoBlog-DSII/TechnoBlog/assets/95147293/152edf9c-0767-4e1e-a0fb-e9c8bf89b940)
+We use Github for storage and management of our project.
+
+Github Actions allows us that every time there is a change in the development branch or a push in the main branch, the CI-CD workflow is executed. This runs tests with both Phpunit and Npm.
+
+Once the actions have finished, Railway, which is our deployment application, analyzes the results, and two things can happen:
+
+- The tests fail, a notification is generated through slack, so our developers are notified to correct the failures as soon as possible.
+- The tests run successfully, Railway detects that this is a usable commit and proceeds to use the NIXPACKS builder that we configured to build our application, then it builds a docker image which it deploys and already gives us access to a domain that we generated.
+This will run all the tests defined in the tests folder and display the results in the console, including coverage and the number of tests executed.
 ## License
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
