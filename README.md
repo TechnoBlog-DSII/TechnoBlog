@@ -43,6 +43,27 @@ Now the console has to show you this link (example : http://127.0.0.1:8000) and 
 This will run all the tests defined in the tests folder and display the results in the console, including coverage and the number of tests executed.
 ## CD/CI pipeline
 ![image](https://github.com/TechnoBlog-DSII/TechnoBlog/assets/95147293/152edf9c-0767-4e1e-a0fb-e9c8bf89b940)
+
+### GitHub Repository: 
+This box represents the version control repository that stores the source code of your Laravel project. It is the central point where changes to the code are managed and stored.
+
+### GitHub Actions: 
+Represented by the box labeled "GitHub Actions," it is the continuous integration and continuous delivery (CI/CD) service provided by GitHub. It is responsible for executing the steps defined in the workflow (CD/CI.yml file) in response to events such as changes in the repository.
+
+### Build & Test: 
+This box represents the build and testing steps in the CI/CD pipeline. Actions such as dependency installation, code compilation, and execution of automated tests are carried out here to ensure software quality.
+
+### Deploy to Railway: 
+Represented by the box labeled "Deploy to Railway," this step is responsible for deploying the Laravel application to the Railway hosting platform. It sends a deployment request to the Railway API for the platform to perform the application deployment.
+
+### Railway API: 
+The box labeled "Railway API" represents the application programming interface (API) provided by the Railway platform. This API receives the deployment request from the CI/CD pipeline and processes it to initiate the deployment of the Laravel application in the specified environment.
+
+### Laravel Application Environment: 
+This box represents the runtime environment of the Laravel application on Railway. After receiving and processing the deployment request, Railway deploys the application in this environment, allowing the application to run and be available for use.
+
+### Explanation of pipeline
+
 We use Github for storage and management of our project.
 
 Github Actions allows us that every time there is a change in the development branch or a push in the main branch, the CI-CD workflow is executed. This runs tests with both Phpunit and Npm.
